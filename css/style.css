@@ -127,3 +127,47 @@ img {
 /************************************************
     SOLUZIONE RESPONSIVE
  ************************************************/
+ /* Sistemazione dell'overflow del contenuto del container */
+ .container {
+    width: auto;
+    max-width: 1140px;
+}
+/* Sistemazione delle spaziature tra le sezioni per la gestione del background su schermi piccoli (1/2) */
+.steps {
+    margin-bottom: 0;
+}
+.why-us {
+    padding: 3rem 0;
+    margin-bottom: 0;
+}
+@media screen and (max-width: 480px) {
+    /* Sistemazione delle spaziature tra le sezioni per la gestione del background su schermi piccoli (2/2) */
+    .why-us {
+        background: #222222;
+    }    
+    
+    /* Modifica del layout della pagina su schermi piccoli */
+    .row {
+        flex-direction: column;
+    }
+    /* Strada alternativa che avrei preso per selezionare le colonne senza dover utilizzare i selettori specifici tramite cui sono state originariamente assegnate le larghezze */
+    /* [class^="col"] {
+        width: 100% !important;
+        margin-bottom: 3rem !important;
+    }
+    [class^="col"]:last-child {
+        margin-bottom: 0 !important;
+    } */
+    .lessons .col,
+    .steps .col,
+    .why-us .col-left,
+    .why-us .col-right {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    .lessons .col:last-child,
+    .steps .col:last-child,
+    .why-us .col-right {
+        margin-bottom: 0;
+    }
+}
